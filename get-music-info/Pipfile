@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+python3-discogs-client = "*"
+uvicorn = "*"
+aiohttp = "*"
+typedload = "*"
+more-itertools = "*"
+airtable-python-wrapper = {git = "https://github.com/gtalarico/airtable-python-wrapper.git"}
+
+[dev-packages]
+yapf = "*"
+flake8 = "*"
+flake8-annotations = "*"
+flake8-commas = "*"
+flake8-import-order = "*"
+
+[requires]
+python_version = "3.9"
