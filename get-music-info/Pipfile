@@ -5,7 +5,6 @@ name = "pypi"
 
 [packages]
 fastapi = "*"
-python3-discogs-client = "*"
 uvicorn = "*"
 aiohttp = "*"
 typedload = "*"
