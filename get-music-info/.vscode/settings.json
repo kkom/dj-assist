@@ -1,0 +1,16 @@
+{
+    "[makefile]": {
+        "editor.insertSpaces": false
+    },
+    "editor.formatOnSave": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.useLibraryCodeForTypes": true,
+    "python.formatting.provider": "yapf",
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.terminal.activateEnvironment": false, // run `pipenv shell` instead, to load the .env file: https://github.com/microsoft/vscode-python/issues/944#issuecomment-782842084
+}
