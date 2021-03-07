@@ -1,14 +1,10 @@
 import asyncio
 from typing import Optional, Sequence, TypedDict
 
-from airtable import Airtable  # type: ignore
-
 from more_itertools import nth
 
-from .os_utils import getenvx
-from .spotify import SpotifyClient, get_track_url, parse_track_id
-
-BASE_KEY = "appDm72e50rvgEuCV"
+from .airtables import track_airtable
+from ..spotify import SpotifyClient, get_track_url, parse_track_id
 
 KEY_MAPPING = {
     0: "C",
@@ -29,14 +25,6 @@ MODE_MAPPING = {
     0: "minor",
     1: "major",
 }
-
-api_key = getenvx("AIRTABLE_API_KEY")
-
-track_airtable = Airtable(
-    base_key=BASE_KEY,
-    table_name="Track",
-    api_key=api_key,
-)
 
 
 class AirtableTrackFields(TypedDict, total=False):

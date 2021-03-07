@@ -7,9 +7,10 @@ name = "pypi"
 fastapi = "*"
 uvicorn = "*"
 aiohttp = "*"
-typedload = "*"
 more-itertools = "*"
 airtable-python-wrapper = {git = "https://github.com/gtalarico/airtable-python-wrapper.git"}
+python3-discogs-client = "*"
+typedload = {git = "https://github.com/ltworf/typedload.git"}
 
 [dev-packages]
 yapf = "*"
