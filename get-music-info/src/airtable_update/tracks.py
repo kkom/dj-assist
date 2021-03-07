@@ -30,7 +30,7 @@ MODE_MAPPING = {
 class AirtableTrackFields(TypedDict, total=False):
     Album: str
     Artist: str
-    SpotifyURL: str
+    Spotify: str
     Title: str
 
 
@@ -47,7 +47,7 @@ async def get_track_spotify_id(
     airtable_fields = airtable_track["fields"]
 
     try:
-        track_id_from_url = parse_track_id(airtable_fields["SpotifyURL"])
+        track_id_from_url = parse_track_id(airtable_fields["Spotify"])
     except Exception:
         track_description = " - ".join([
             airtable_fields["Artist"],
@@ -107,7 +107,7 @@ async def update_airtable_tracks(
             "Loudness": audio_features["loudness"],
             "Instrumentalness": audio_features["instrumentalness"],
             "Valence": audio_features["valence"],
-            "SpotifyURL": get_track_url(spotify_id),
+            "Spotify": get_track_url(spotify_id),
             "Updated": True,
         },
     } for spotify_id, audio_features in audio_features_by_spotify_id.items()]
@@ -125,7 +125,7 @@ async def update_all_tracks(spotify_client: SpotifyClient) -> int:
         formula="""
             AND(
                 OR(
-                    LEN(SpotifyURL) > 0,
+                    LEN(Spotify) > 0,
                     AND(
                         LEN(Title) > 0,
                         LEN(Artist) > 0
